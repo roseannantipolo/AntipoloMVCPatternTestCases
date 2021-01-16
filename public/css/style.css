@@ -86,5 +86,44 @@ h3{
     margin: 10px 0;
   }
   
+  .addTodo, .addGoalsPlans, .addAppointments, .addErrands {
+    font-style: Courier;
+    font-size: 1.15rem;
+    border-radius: 2px;
+    height: 8px;
+    width: 90%;
+    top: 45px;
+    right: 0;
+    left: 0;
+    position: absolute;
+    margin: auto;
+    border: none;
+    padding: 20px;
+    padding-right: 50px;
+  }
 
+  .todobutton img, .goalsPlansButton img, .appointmentsButton img, .errandsButton img{
+    height: 40px;
+    width: 40px;
+    top: 90px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    margin: auto;
+  }
+
+  .todobutton, .goalsPlansButton, .appointmentsButton, .errandsButton {
+    height: 8px;
+    width: 15px;
+    position: absolute;
+    margin: auto;
+    top: 15px;
+    right: 45px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    margin: auto;
+  }
   

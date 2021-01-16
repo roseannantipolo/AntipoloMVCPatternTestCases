@@ -17,4 +17,7 @@ Route::get('/', function () {
     return view('LifePlanner.index');
 });
 
+Route::get('/LifePlanner/create', function () {
+    return view('LifePlanner.create');
+});
 
