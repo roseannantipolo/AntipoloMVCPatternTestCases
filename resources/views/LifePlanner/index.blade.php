@@ -13,13 +13,30 @@
 
         <div class="storage">
             <h2>To-Do-List</h2>
-            <form action="addTask.php" method="POST">
-            <input type="text" class="addTodo" name="addTodo" placeholder="Add your Tasks" />
+            <form action="/add" method="POST">
+            {{ csrf_field() }}
+            <input type="text" class="addTodo" name="task" placeholder="Add your Tasks" />
             <button class="todobutton" name="taskBtn">
                 <img src="/img/add btn.png" />
             </button>
             </form>
+
+        <div class="listItems">
+        <center>
+            @foreach($data as $value)
+            <div class='elementItem'>
+                @if($value->Status == "Not Completed")
+                    <p>{{ $value->Task }}</p>
+                @else
+                    <p class="line-through">{{ $value->Task }}</p>
+                @endif
+                <img class='checkIcon' src='img\check icon.png' data-id="{{ $value->TodolistID}}">
+                <img class='deleteIcon' src='img\delete icon.png' data-id="{{ $value->TodolistID}}">
+            </div>
+            @endforeach
+        </center>
         </div>
+      </div>
 
         <div class="container">
             <h2>Goals and Plans</h2>
@@ -36,7 +53,7 @@
             <form action="addTask.php" method="POST">
             <input type="text" name="addAppointments" class="addAppointments" placeholder="Add your Appointments" />
             <button class="appointmentsButton" name="appointmentsBtn">
-                <img src="/img/add btn.png" />
+            <img src="/img/add btn.png" />
             </button>
             </form>
         </div>

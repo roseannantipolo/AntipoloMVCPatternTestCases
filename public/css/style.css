@@ -126,4 +126,64 @@ h3{
     outline: none;
     margin: auto;
   }
+
+  .listItems, .listItems::-webkit-scrollbar{
+    height: 75%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin:auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: Courier;
+  }
+  
+  .elementItem{
+    font-style: Courier;
+    font-size: 1.0rem;
+    background: white;
+    text-align: left;
+    height: 38px;
+    width: 87%;
+    position: relative;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 10px;
+    word-wrap: break-word;
+  }
+  
+  .elementItem .checkIcon{
+    height: 25px;
+    right: 35px;
+    position: absolute;
+    margin: auto;
+    float: right;
+  }
+  
+  .elementItem .deleteIcon{
+    margin: auto;
+    height: 25px;
+    position: absolute;
+    right: 10px;
+  }
+  
+  .elementItem:hover{
+    transform: scale(1.1);
+  }
+  
+  ::selection {
+    background: transparent;
+  }
+
+  .line-through{
+    text-decoration: line-through;
+  }
+
+  p{
+    display: inline;
+  }
+  
   

@@ -13,11 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('LifePlanner.index');
-});
+Route::post('/add', 'LifeplannerController@store');
 
-Route::get('/LifePlanner/create', function () {
-    return view('LifePlanner.create');
-});
+Route::get('/', 'LifeplannerController@show');
+
+Route::put('/update', 'LifeplannerController@edit');
+
 
