@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class lifeplanner extends Model
 {
     use HasFactory;
+
+    protected $connection = 'mysql';
+    protected $table = 'todolist';
+    protected $primaryKey = 'todolistID';
+    public $incrementing = true;
 }

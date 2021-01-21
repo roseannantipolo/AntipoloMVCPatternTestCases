@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\lifeplanner;
 use Illuminate\Http\Request;
 use DB;
 
@@ -31,10 +32,12 @@ class LifeplannerController extends Controller
     public function edit(Request $request){
         
         $id = $request->input('id');
-        $todolist = DB::select('SELECT * FROM todolist WHERE TodolistID = ?', [$id]);
-        $todo = $todolist::find($id);
-        $todo->Task = str_replace("<strike>", "", $todo->Task);
-        $todo->Task = str_replace("</strike>", "", $todo->Task);
+        $todo = lifeplanner::find($id["id"]);
+        if($todo->Status == "Not Completed")
+            $todo->Status = "Completed";
+        else
+        $todo->Status = "Not Completed";
         $Task->save();
+        return view('LifePlanner.index');
     }
 }

@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title> Antipolo - Life Planner </title>
         <link href="/css/style.css" rel="stylesheet">
     </head>
@@ -14,11 +15,11 @@
         <div class="storage">
             <h2>To-Do-List</h2>
             <form action="/add" method="POST">
-            {{ csrf_field() }}
-            <input type="text" class="addTodo" name="task" placeholder="Add your Tasks" />
-            <button class="todobutton" name="taskBtn">
-                <img src="/img/add btn.png" />
-            </button>
+                {{!! csrf_field() !!}}
+                <input type="text" class="addTodo" name="task" placeholder="Add your Tasks" />
+                <button class="todobutton" name="taskBtn">
+                    <img src="/img/add btn.png" />
+                </button>
             </form>
 
         <div class="listItems">
@@ -30,8 +31,8 @@
                 @else
                     <p class="line-through">{{ $value->Task }}</p>
                 @endif
-                <img class='checkIcon' src='img\check icon.png' data-id="{{ $value->TodolistID}}">
-                <img class='deleteIcon' src='img\delete icon.png' data-id="{{ $value->TodolistID}}">
+                <img class='checkIcon' src='img\check icon.png' data-id="{{ $value->TodolistID }}">
+                <img class='deleteIcon' src='img\delete icon.png' data-id="{{ $value->TodolistID }}">
             </div>
             @endforeach
         </center>
@@ -69,5 +70,8 @@
         </div>
         
         </header>
+
+        <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
     </body>
 </html>
